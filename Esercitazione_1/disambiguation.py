@@ -19,4 +19,6 @@ def lesk(word,sentence):
             if overlap > max_overlap:
                 max_overlap = overlap
                 best_sense = sense
+    else:
+        best_sense = "None"
     return best_sense
