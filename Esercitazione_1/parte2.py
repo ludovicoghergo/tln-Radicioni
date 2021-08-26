@@ -6,27 +6,34 @@ import random
 
 def filt(x):
     return x.label() == 'NN'
-test_data = []
-correct = []
-sents = semcor.sents()
-index = random.randrange(0,len(sents)-51)
+test_data = ["Unknown"] * 50
 
-for s in semcor.tagged_sents(tag='both')[index:index+50]:
-    for c in s:
-        if isinstance(c.label(), Lemma):
-            if c[0].label() == 'NN':
-                test_data.append([c[0][0], c.label().synset()])
-                break
+def calc_lesk():
+    correct = []
+    sents = semcor.sents()
+    index = random.randrange(0,300)
+    j = 0
+    for s in semcor.tagged_sents(tag='both')[index:index+50]:
+        for c in s:
+            if isinstance(c.label(), Lemma):
+                if c[0].label() == 'NN':
+                    test_data[j] = [c[0][0], c.label().synset()]
+                    break
+        j = j +1
 
-i = 0
-ris = 0
-for s in sents[index:index+50]:
-    sol = dis.lesk(test_data[i][0], s)
-    if not isinstance(sol,str):
-        ris = ris + 1 if test_data[i][1] == sol else ris
-    test_data[i].append(sol)
-    i = i + 1
-perc = ris / 50
-#print(dis.lesk(word, semcor.sents()[:1]).definition())
+    i = 0
+    ris = 0
+    for s in sents[index:index+50]:
+        if not isinstance(test_data[i],str):
+            sol = dis.lesk(test_data[i][0], s)
+            if not isinstance(sol,str):
+                ris = ris + 1 if test_data[i][1] == sol else ris
+            test_data[i].append(sol)
+        i = i + 1
+    return ris / 50
 
-print("ciao")
+sum = 0
+n_try = 10
+for k in range(n_try):
+    sum = sum + calc_lesk()
+print(sum/n_try)
