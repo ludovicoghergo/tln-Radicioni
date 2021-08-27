@@ -46,7 +46,6 @@ def lc_word (w1, w2):
             sp = lc_sense(ss1, ss2)
             if (sp > max):
                 max = sp
-    print(max)
     return max
 
 def lc_sense (ss1, ss2):
