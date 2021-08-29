@@ -31,9 +31,9 @@ Hunter	12097	hunter.n.01
 Degree	12110	degree.n.01
 Duration	12100	duration.n.01
 Frequency	12107	frequency.n.01
-Instrument	12099	
+Instrument	12099	instrument.n.01
 Manner	12101	manner.n.02
-Means	12102	means.n.
+Means	12102	means.n.01
 Outcome	12103	means.n.02
 Place	12104	place.n.01
 Purpose	12106	purpose.n.01

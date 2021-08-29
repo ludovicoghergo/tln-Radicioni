@@ -6,6 +6,7 @@ import context as ctx
 import pandas as pd
 import numpy as np
 import re
+from nltk.corpus.reader.wordnet import Synset
 
 # FRAME GHERGO
 #f = [[1582,"reference"],[2191,"turn_out"],[1670,"posing"],[15,"separating"],[2320,"experience"]]
@@ -36,6 +37,8 @@ word = [] * 4
 frame_sense = []
 FE_sense = []
 LU_sense = []
+tot_el = 0
+tot_giusti = 0
 for i in range(4):
     max_overlap = 0
     local = fn.frame(f[i][0])
@@ -54,16 +57,29 @@ for i in range(4):
     frame_sense.append(ctx.best_sense(word[i],formatter))
     ### SENSO LEX UNIT
     LU_sense.append(ctx.best_sense_lux(word[i],local.lexUnit))
+
     for fe in FE_sense[i]:
+        tot_el = tot_el + 1
         for el in annotation[i]:
             if (el[0]=='FE' and el[1].lower()==fe[0].lower()):
                 el.append(fe[1])
     for fs in frame_sense[i]:
+        tot_el = tot_el + 1
         for el in annotation[i]:
             if (el[0]=='Name' and el[1].lower()==fs[0].lower()):
                 el.append(fs[1])
     for lu in LU_sense[i]:
+        tot_el = tot_el + 1
         for el in annotation[i]:
             if (el[0]=='LU' and el[1]==lu[0][:len(lu[0])-2].lower()):
                 el.append(lu[1])
-print("a")
+
+for frame in annotation:
+    for elem in frame:
+        if(elem[3] != "None" and isinstance(elem[4], Synset)):
+            if wn.synset(elem[3])==elem[4]:
+                tot_giusti=tot_giusti+1
+        else:
+            tot_giusti
+print("totale giusti="+str(tot_giusti))
+print("accuracy="+str(tot_giusti/tot_el))
