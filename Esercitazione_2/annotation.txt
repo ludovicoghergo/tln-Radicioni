@@ -10,7 +10,7 @@ staircase	10275	staircase.n.01
 stairs	10277	stair.n.01
 step	13319	step.n.04
 window	10274	window.n.01
-part	6107	part.n.02
+Part	6107	part.n.02
 Connected_locations	6114	location.n.01
 Creator	6112	creator.n.02
 Descriptor	6109	descriptor.n.01
@@ -20,7 +20,6 @@ Material	6111	material.n.01
 Orientation	6110	orientation.n.03
 Source	6113	source.n.01
 Whole	6108	whole.n.01
-
 
 Hunting	2006	hunting.n.02
 fish	14767	fish.n.01
@@ -42,7 +41,6 @@ Time	12105	time.n.03
 Co-participant	12177	participant.n.01
 Particular_iteration	12112	iteration.n.03
 
-
 Circumscribed_existence	2612	existence.n.01
 appear	16488	appear.v.02
 found	16490	find.v.02
@@ -52,7 +50,6 @@ Entity	14773	entity.n.01
 Place	14775	place.n.02
 Time	14774	time.n.03
 Descriptor	14779	descriptor.n.01
-
 
 Entity	251	entity.n.01
 entity	13412	entity.n.01

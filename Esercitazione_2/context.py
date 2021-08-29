@@ -6,6 +6,7 @@ import re
 def best_sense(context,elements):
     FE_best_senses = []
     for elem in elements:
+        original = elem
         max_overlap_FE = 0
         best_sense = "none"
         senses_list = []
@@ -36,12 +37,13 @@ def best_sense(context,elements):
             if overlap >= max_overlap_FE:
                 max_overlap_FE = overlap
                 best_sense = sense
-        FE_best_senses.append(best_sense)
+        FE_best_senses.append([original,best_sense])
     return FE_best_senses
 
 def best_sense_lux(context,elements):
     FE_best_senses = []
     for elem in elements:
+        original = elem
         elem = elem[:len(elem)-2]
         max_overlap_FE = 0
         best_sense = "none"
@@ -73,5 +75,5 @@ def best_sense_lux(context,elements):
             if overlap >= max_overlap_FE:
                 max_overlap_FE = overlap
                 best_sense = sense
-        FE_best_senses.append(best_sense)
+        FE_best_senses.append([original,best_sense])
     return FE_best_senses
