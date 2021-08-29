@@ -1,0 +1,68 @@
+Connecting_architecture	1025	architecture.n.01
+corridor	10272	corridor.n.01
+door	10268	door.n.01
+elevator	10269	elevator.n.01
+escalator	10271	escalator.n.02
+gate	16660	gate.n.01
+hallway	10273	hallway.n.01
+lift	10270	lift.n.08
+staircase	10275	staircase.n.01
+stairs	10277	stair.n.01
+step	13319	step.n.04
+window	10274	window.n.01
+part	6107	part.n.02
+Connected_locations	6114	location.n.01
+Creator	6112	creator.n.02
+Descriptor	6109	descriptor.n.01
+Direction	6116	direction.n.02
+Goal	6117	goal.n.02
+Material	6111	material.n.01
+Orientation	6110	orientation.n.03
+Source	6113	source.n.01
+Whole	6108	whole.n.01
+
+
+Hunting	2006	hunting.n.02
+fish	14767	fish.n.01
+hunt	14766	hunt.n.07
+seal	15117	seal.n.09
+Food	12098	food.n.01
+Ground	12111	ground.n.01
+Hunter	12097	hunter.n.01
+Degree	12110	degree.n.01
+Duration	12100	duration.n.01
+Frequency	12107	frequency.n.01
+Instrument	12099	
+Manner	12101	manner.n.02
+Means	12102	means.n.
+Outcome	12103	means.n.02
+Place	12104	place.n.01
+Purpose	12106	purpose.n.01
+Time	12105	time.n.03
+Co-participant	12177	participant.n.01
+Particular_iteration	12112	iteration.n.03
+
+
+Circumscribed_existence	2612	existence.n.01
+appear	16488	appear.v.02
+found	16490	find.v.02
+occur	16489	occur.v.03
+Circumstances	14776	circumstance.n.02
+Entity	14773	entity.n.01
+Place	14775	place.n.02
+Time	14774	time.n.03
+Descriptor	14779	descriptor.n.01
+
+
+Entity	251	entity.n.01
+entity	13412	entity.n.01
+individual	16996	individual.a.02
+item	13137	item.n.01
+object	16927	object.n.01
+thing	16928	thing.n.08
+what	18440	None
+Entity	2607	entity.n.01
+Constituent_parts	2604	part.n.02
+Formational_cause	2605	cause.n.03
+Name	2606	name.n.01
+Type	2608	type.n.01
