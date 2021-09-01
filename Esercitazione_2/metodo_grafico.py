@@ -4,6 +4,28 @@ from nltk.corpus import framenet as fn
 from nltk.corpus import wordnet as wn
 import re
 import grafo
+import networkx as nx
+
+
+
+def get_context(word):
+    word2 = []
+    context = []
+    no_words = []
+    local = fn.frame(word)
+    word1 = re.sub(r"[^a-zA-Z0-9 ]", "", local.definition).lower().split()
+    for elem in local.FE:
+        val = local.FE[elem]
+        word2 = word2 + (re.sub(r"[^a-zA-Z0-9 ]", "", val.definition).lower().split())
+    context = set(word1 + word2)
+    file1 = open('stop_words_FULL.txt', 'r')
+    Lines = file1.readlines()
+    for line in Lines:
+        no_words.append(line[:len(line)-1])
+    no_words = set(no_words)
+    context = context.difference(no_words)
+    return context
+
 
 
 # FRAME GHERGO
@@ -40,11 +62,21 @@ tot_giusti = 0
 for i in range(4):
     max_overlap = 0
     local = fn.frame(f[i][0])
-    word1 = re.sub(r"[^a-zA-Z0-9 ]", "", local.definition).split()
     word2 = []
     synsets = []
+    word1 = re.sub(r"[^a-zA-Z0-9 ]", "",f[i][1]).split()
+    for wd in word1:
+        synsets = synsets + wn.synsets(wd)
     for fe in local.FE:
         synsets = synsets + wn.synsets(fe)
     synsets = set(synsets)
-    grafo.graph_draw(grafo.wn_graph(synsets))
+    my_graph = grafo.wn_graph(synsets)
+    #grafo.graph_draw(my_graph)
+    #short_path_list = nx.shortest_simple_paths(my_graph,'part.n.02','object.n.01')
+    #short_path_list = list(short_path_list)
+    ctx = get_context(f[i][0])
+    grafo.get_score("Creator","creator.n.02",ctx,my_graph)
     print("fatto")
+
+
+
