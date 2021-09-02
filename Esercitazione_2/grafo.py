@@ -33,5 +33,5 @@ def get_score(word,poss_sense,ctx,graph):
             if graph.has_node(sense.name()) and nx.has_path(graph,poss_sense,sense.name()):
                 p = list(nx.shortest_simple_paths(graph,poss_sense,sense.name()))
                 sum = sum + math.exp(-(len(p[0])-1))
-    return path
+    return sum
 
