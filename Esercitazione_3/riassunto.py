@@ -5,6 +5,8 @@ def unify_vet (vettori):
     vet = []
     for v in vettori:
         for el in v:
+            if (el == ""):
+                print(2)
             vet.append(el)
     #prendo la seconda parte del termine nasari e ordino in base al suo valore
     vet.sort(key= lambda x: float(x.split("_")[1]),reverse=True)
@@ -36,7 +38,9 @@ titolo = []
 i = 0
 
 for l in Lines2:
-    vettori.append(l.split(';'))
+    elems = l.split(';')
+    elems = list(filter(lambda a: a != '' and a !='\n', elems))
+    vettori.append(elems)
 while len(titolo)<=0 :
     if (Lines[i][0] != '#' and Lines[i][0]!='\n'):
         titolo = Lines[i]
