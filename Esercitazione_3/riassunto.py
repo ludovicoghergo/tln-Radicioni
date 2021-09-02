@@ -1,23 +1,13 @@
 import re
 from nltk.corpus import wordnet as wn
 
-def takeSecond(elem):
-    return elem[1]
-
 def unify_vet (vettori):
     vet = []
     for v in vettori:
-        i = 0
-        v_app = []
         for el in v:
-            v.pop(i)
-            v_app.append(el.split("_"))
-            if len(v_app)==1:
-                print("a")
-            v_app[1] = float(re.sub(r"[^a-zA-Z0-9 ]", "", v_app[1]))
-            i=i+1
-        vet = vet + v_app
-    vet.sort(key=takeSecond)
+            vet.append(el)
+    #prendo la seconda parte del termine nasari e ordino in base al suo valore
+    vet.sort(key= lambda x: float(x.split("_")[1]),reverse=True)
     return vet
 
 def create_context (frase, nasari, no_words):
