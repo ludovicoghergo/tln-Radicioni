@@ -39,9 +39,11 @@ FE_sense = []
 LU_sense = []
 tot_el = 0
 tot_giusti = 0
+print('Reading frames...')
 for i in range(4):
     max_overlap = 0
     local = fn.frame(f[i][0])
+    print("reading frame: "+ f[i][1])
     word1 = re.sub(r"[^a-zA-Z0-9 ]", "", local.definition).split()
     word2 = []
 

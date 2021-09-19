@@ -1,6 +1,7 @@
 import nltk
 from nltk.corpus import framenet as fn
 from nltk.corpus import wordnet as wn
+import Esercitazione_1.parte_2.utils_es2 as ut2
 import re
 
 def best_sense(context,elements):
@@ -71,7 +72,10 @@ def best_sense_lux(context,elements):
                     elem_ctx = elem_ctx + example.split()
                 for glos in hyper.definition().split():
                     elem_ctx = elem_ctx + re.sub(r"[^a-zA-Z0-9]", "", glos).split()
-            overlap = len(set(elem_ctx).intersection(context))
+
+            elem_ctx = ut2.create_context(set(elem_ctx))
+            context = ut2.create_context(context)
+            overlap = len(elem_ctx.intersection(context))
             if overlap >= max_overlap_FE:
                 max_overlap_FE = overlap
                 best_sense = sense
