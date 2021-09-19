@@ -7,7 +7,7 @@ import correlation as corr
 from nltk.corpus import wordnet as wn
 import matplotlib.pyplot as plt
 import scipy
-data = pd.read_csv ("/home/ludov/Desktop/tln-Radicioni/Esercitazione_1/WordSim353.csv", sep = ',')
+data = pd.read_csv("/home/ludov/Desktop/tln-Radicioni/Esercitazione_1/parte_1/data/WordSim353.csv", sep =',')
 
 wp_arr = []
 spw_arr = []
