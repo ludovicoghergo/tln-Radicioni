@@ -1,6 +1,23 @@
 import re
 from nltk.corpus import wordnet as wn
 
+def weigthed_overlap(v1,v2):
+    v1_filt = list(map(lambda x: x.split("_")[0], v1))
+    v2_filt = list(map(lambda x: x.split("_")[0], v2))
+    commons = set(v1_filt).intersection(set(v2_filt))
+    i =  1
+    nom = 0
+    denom = 0
+    for elem in commons:
+        rank1 = v1_filt.index(elem)+1
+        rank2 = v2_filt.index(elem)+1
+        nom += pow(rank1+rank2,-1)
+        denom += pow(2*i,-1)
+        i += 1
+
+    return nom/denom if denom != 0 else 0
+
+
 def disambiguazione (context, dup):
     best_sense = dup[0][2:]
     max_overlap = 0
@@ -82,7 +99,8 @@ for l in Lines:
     if (l[0] != '#' and l[0]!='\n'):
         paragraph.append(l)
 for p in paragraph:
-    p = [p, create_context(p)]
+    p_context = create_context(p)
+    wo_val = weigthed_overlap(topic,p_context)
+    p = [p, p_context,wo_val ]
     print(p)
-    val += 1
 
