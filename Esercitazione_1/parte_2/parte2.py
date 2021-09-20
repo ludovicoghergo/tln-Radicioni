@@ -4,8 +4,6 @@ import disambiguation as dis
 from nltk.corpus.reader.wordnet import Lemma
 import random
 
-def filt(x):
-    return x.label() == 'NN'
 test_data = ["Unknown"] * 50
 
 def calc_lesk():

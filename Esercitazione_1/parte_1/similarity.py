@@ -18,7 +18,7 @@ def wup_correlation_sense(ss1,ss2):
     dp1 = ut.max_depth(ss1) + 1
     dp2 = ut.max_depth(ss2) + 1
     for wup in lch:
-        dp_lch = wup.min_depth() + 1
+        dp_lch = ut.min_depth(wup) + 1
         if (max_depth_lch < dp_lch):
             max_depth_lch = dp_lch
     if (max_depth_lch != -1):

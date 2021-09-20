@@ -8,6 +8,14 @@ def max_depth(node):
         depth = 0
     return depth
 
+def min_depth(node):
+    hyps = node.hypernyms()
+    if hyps:
+        depth = 1 + min(current.min_depth() for current in hyps)
+    else:
+        depth = 0
+    return depth
+
 
 
 def find_lch(n1,n2):
@@ -27,7 +35,7 @@ def all_hyp(node):
     while todo:
         current = todo.pop()
         todo = todo + current.hypernyms()
-        output= output + current.hypernyms()
+        output = output + current.hypernyms()
     return set(output)
 
 def get_paths(node):
