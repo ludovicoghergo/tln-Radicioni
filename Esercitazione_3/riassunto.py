@@ -1,6 +1,28 @@
 import re
 from nltk.corpus import wordnet as wn
 
+def blue(filtered, gold):
+    gold_terms = []
+    for el in gold:
+        gold_terms.append(el[:len(el)-1])
+    candidate_terms = []
+    for el in filtered:
+        candidate_terms += re.sub(r"[^a-zA-Z0-9 ]", "", el[0]).lower().split(" ")
+    candidate_terms = set(candidate_terms).difference(no_words)
+    blue = len(set(gold_terms).intersection(candidate_terms)) / len(set(candidate_terms))
+    return blue
+
+def rogue(filtered, gold):
+    gold_terms = []
+    for el in gold:
+        gold_terms.append(el[:len(el) - 1])
+    candidate_terms = []
+    for el in filtered:
+        candidate_terms += re.sub(r"[^a-zA-Z0-9 ]", "", el[0]).lower().split(" ")
+    candidate_terms = set(candidate_terms).difference(no_words)
+    rogue = len(set(gold_terms).intersection(candidate_terms)) / len(set(gold_terms))
+    return rogue
+
 def weigthed_overlap(v1,v2):
     v1_filt = list(map(lambda x: x.split("_")[0], v1))
     v2_filt = list(map(lambda x: x.split("_")[0], v2))
@@ -45,10 +67,18 @@ def unify_vet (vettori):
     vet.sort(key= lambda x: float(x.split("_")[1]),reverse=True)
     return vet
 
+def create_context_titolo(frase):
+    vettori = create_context(frase)
+    final = vettori
+    frase = ""
+    final = list(map(lambda x: x.split("_")[0], final))
+    for s in final:
+        frase += " "+s
+    return create_context(frase)
+
 def create_context (frase):
     frase = re.sub(r"[^a-zA-Z0-9 ]", "", frase).lower().split(" ")
     frase = list(set(frase).difference(no_words))
-    pippo = dict_vet
     vettori = []
     for w in frase:
         dup_vet = []
@@ -86,7 +116,8 @@ for line in Lines3:
     no_words.append(line[:len(line)-1])
 no_words = set(no_words)
 dict_vet = {}
-
+# 1=title - 2=cue word
+metodo_riassunto = 1
 
 for l in Lines2:
     elems = l.split(';')
@@ -105,17 +136,17 @@ for text in testi:
         if (Lines[i][0] != '#' and Lines[i][0]!='\n'):
             titolo = Lines[i]
         i=i+1
-    #topic = create_context(titolo)
-    val = 0
     paragraph = []
+    if metodo_riassunto==1:
+        topic = create_context_titolo(titolo)
+    else:
+        topic = create_context(selectTopic(paragraph))
+    val = 0
     final = []
     for l in Lines:
         if (l[0] != '#' and l[0]!='\n'):
             paragraph.append(l)
-    ##
-    topic = create_context(selectTopic(paragraph))
-    print(topic)
-    ##
+
     for p in paragraph:
         p_context = create_context(p)
         wo_val = weigthed_overlap(topic,p_context)
@@ -131,8 +162,8 @@ for text in testi:
         for elem in final:
             if elem in filtered:
                 file.write(elem[0])
-
-
-
-
-
+        gold = open('utils/reference_summary/' + text + '_reference', encoding="utf8")
+        lines = gold.readlines()
+        print (text+ " Riassunto %= "+str(size))
+        print ("blue = "+str(blue(filtered, lines)))
+        print ("rogue = "+str(rogue(filtered, lines))+"\n")
