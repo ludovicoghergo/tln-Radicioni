@@ -61,22 +61,33 @@ def create_context (frase):
             vettori.append(dup_vet[0][2:])
     return unify_vet(vettori)
 
+def selectTopic(paragraph):
+    topic = ""
+    for p in paragraph:
+        for sentence in p.split("."):
+            if len(set(sentence.lower().split(" ")).intersection(set(cues_words))) > 0:
+                topic = topic +" "+sentence
+    return topic
+
+
 #leggo i file
-file1 = open('utils/docs/Andy-Warhol.txt', encoding="utf8")
-Lines = file1.readlines()
 file2 = open('utils/NASARI_vectors/dd-small-nasari-15.txt', encoding="utf8")
 Lines2 = file2.readlines()
 file3 = open('utils/stop_words_FULL.txt', 'r')
 Lines3 = file3.readlines()
 file4 = open('utils/babelnet.txt', encoding="utf8")
 Lines4 = file4.readlines()
+file5 = open('utils/cues_words.txt', encoding="utf8")
+cues_words = file5.readlines()
+cues_words = list(map(lambda x: x[:len(x)-1].lower(), cues_words))
 no_words = []
+testi = ['Andy-Warhol.txt','Ebola-virus-disease.txt','Life-indoors.txt','Napoleon-wiki.txt','Trump-wall.txt']
 for line in Lines3:
     no_words.append(line[:len(line)-1])
 no_words = set(no_words)
 dict_vet = {}
-titolo = []
-i = 0
+
+
 for l in Lines2:
     elems = l.split(';')
     elems = list(filter(lambda a: a != '' and a !='\n', elems))
@@ -84,23 +95,44 @@ for l in Lines2:
         dict_vet[elems[1].lower()].append([elems[0]] + elems[2:])
     else:
         dict_vet[elems[1].lower()] = [[elems[0]] +elems[2:]]
-while len(titolo)<=0 :
-    if (Lines[i][0] != '#' and Lines[i][0]!='\n'):
-        titolo = Lines[i]
-    i=i+1
-topic = create_context(titolo)
-print(titolo)
-print(topic)
 
-val = 0
+for text in testi:
+    titolo = []
+    i = 0
+    file1 = open('utils/docs/'+text, encoding="utf8")
+    Lines = file1.readlines()
+    while len(titolo)<=0 :
+        if (Lines[i][0] != '#' and Lines[i][0]!='\n'):
+            titolo = Lines[i]
+        i=i+1
+    #topic = create_context(titolo)
+    val = 0
+    paragraph = []
+    final = []
+    for l in Lines:
+        if (l[0] != '#' and l[0]!='\n'):
+            paragraph.append(l)
+    ##
+    topic = create_context(selectTopic(paragraph))
+    print(topic)
+    ##
+    for p in paragraph:
+        p_context = create_context(p)
+        wo_val = weigthed_overlap(topic,p_context)
+        final.append([p, p_context,wo_val])
+    final_temp = final
+    final_temp.sort(key= lambda x: x[2],reverse=True)
+    perc=[10,20,30]
+    file = open("utils/riassunti/"+text+"_short", "w")
+    for size in perc:
+        file.write("Riassunto con"+str(size)+"%:\n")
+        calcolo = int(len(final_temp) - len(final_temp) * size / 100)
+        filtered = final_temp[:calcolo]
+        for elem in final:
+            if elem in filtered:
+                file.write(elem[0])
 
-paragraph = []
-for l in Lines:
-    if (l[0] != '#' and l[0]!='\n'):
-        paragraph.append(l)
-for p in paragraph:
-    p_context = create_context(p)
-    wo_val = weigthed_overlap(topic,p_context)
-    p = [p, p_context,wo_val ]
-    print(p)
+
+
+
 
