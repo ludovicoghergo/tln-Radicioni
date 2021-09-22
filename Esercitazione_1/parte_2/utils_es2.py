@@ -1,6 +1,6 @@
 from nltk.corpus import wordnet as wn
 ##stop words
-file3 = open('/home/ludov/Desktop/tln-Radicioni/Esercitazione_1/parte_2/data/stop_words_FULL.txt', 'r')
+file3 = open('stop_words_FULL.txt', 'r')
 Lines3 = file3.readlines()
 no_words = []
 for line in Lines3:
