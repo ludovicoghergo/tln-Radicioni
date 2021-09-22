@@ -11,7 +11,7 @@ from nltk.corpus.reader.wordnet import Synset
 # FRAME GHERGO
 #f = [[1582,"reference"],[2191,"turn_out"],[1670,"posing"],[15,"separating"],[2320,"experience"]]
 # FRAME ZITO
-f = [[1025,"Connecting_architecture"],[2006,"Hunting"],[2612,"Circumscribed_existence"],[251,"Entity"]]
+f = [[1025,"Connecting_architecture"],[2006,"Hunting"],[2612,"Circumscribed_existence"],[251,"Entity"],[62,"Placing"]]
 
 file1 = open('annotation.txt', 'r')
 Lines = file1.readlines()
@@ -40,7 +40,7 @@ LU_sense = []
 tot_el = 0
 tot_giusti = 0
 print('Reading frames...')
-for i in range(4):
+for i in range(5):
     max_overlap = 0
     local = fn.frame(f[i][0])
     print("reading frame: "+ f[i][1])
@@ -83,5 +83,6 @@ for frame in annotation:
                 tot_giusti=tot_giusti+1
         else:
             tot_giusti
-print("totale giusti="+str(tot_giusti))
-print("accuracy="+str(tot_giusti/tot_el))
+print("totale giusti = "+str(tot_giusti))
+print("totale FE e LU = "+str(tot_el))
+print("accuracy = "+str(tot_giusti/tot_el))
