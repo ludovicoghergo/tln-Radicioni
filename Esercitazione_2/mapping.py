@@ -9,11 +9,12 @@ import re
 from nltk.corpus.reader.wordnet import Synset
 
 # FRAME GHERGO
-#f = [[1582,"reference"],[2191,"turn_out"],[1670,"posing"],[15,"separating"],[2320,"experience"]]
+f = [[1582,"Proper_reference"],[2191,"Turning_out"],[1670,"Posing_as"],[15,"Separating"],[2320,"Cause_bodily_experience"]]
 # FRAME ZITO
-f = [[1025,"Connecting_architecture"],[2006,"Hunting"],[2612,"Circumscribed_existence"],[251,"Entity"],[62,"Placing"]]
+#f = [[1025,"Connecting_architecture"],[2006,"Hunting"],[2612,"Circumscribed_existence"],[251,"Entity"],[62,"Placing"]]
 
-file1 = open('annotation.txt', 'r')
+#file1 = open('annotation.txt', 'r')
+file1 = open('annotation2.txt', 'r')
 Lines = file1.readlines()
 i=0
 title = 0
@@ -73,7 +74,7 @@ for i in range(5):
     for lu in LU_sense[i]:
         tot_el = tot_el + 1
         for el in annotation[i]:
-            if (el[0]=='LU' and el[1]==lu[0][:len(lu[0])-2].lower()):
+            if (el[0]=='LU' and el[1].lower().replace("_", " ")==lu[0][:len(lu[0])-2].lower()):
                 el.append(lu[1])
 
 for frame in annotation:

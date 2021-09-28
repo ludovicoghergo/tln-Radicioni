@@ -11,10 +11,10 @@ def best_sense(context,elements):
         max_overlap_FE = 0
         best_sense = "none"
         senses_list = []
+        elem = elem.lower().replace("_", " ")
         if wn.synsets(elem):
             senses_list = wn.synsets(elem)
         else:
-            elem = elem.lower().replace("_", " ")
             elem = elem.split()
             for single in elem:
                 senses_list = senses_list + wn.synsets(single)
@@ -49,6 +49,9 @@ def best_sense_lux(context,elements):
         max_overlap_FE = 0
         best_sense = "none"
         senses_list = []
+        if elem == "end_up":
+            print("ciao")
+        elem = elem.lower().replace("_", " ")
         if wn.synsets(elem):
             senses_list = wn.synsets(elem)
         else:
