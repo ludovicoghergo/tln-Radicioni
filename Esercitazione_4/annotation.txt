@@ -1,0 +1,50 @@
+antropologia	archeologia	3	bn:00004584n	bn:00005391n
+Dell	Dingle	1	bn:00190000n	bn:01439086n
+succo	cucchiaio	1	bn:00048532n	bn:00073547n
+Pfizer	medicinale	3	bn:03463336n	bn:00054128n
+camion	pacco	1	bn:00015022n	bn:16912174n
+recettore	molecola proteica	3	bn:14945754n	bn:00064856n
+Google Drive	driver	3	bn:02697062n	bn:00026721n
+miliardario	senzatetto	3	bn:00010443n	bn:00044537n
+episodio	capitolo	3	bn:16016193n	bn:00182115n
+infinito	zero	1	bn:00046668n	bn:00000004n
+servo	schiavo	4	bn:00072080n	bn:00072080n
+suffisso	affisso	3	bn:00063792n	bn:00001777n
+riscaldamento globale	calore	2	bn:00040681n	bn:00043415n
+ormone della crescita	somatotropina	4	bn:00041984n	bn:00041984n
+cielo	sogno	1	bn:00072016n	bn:00028658n
+prezzo di offerta	Londra	0	bn:00010264n	bn:00013179n
+fertilizzante	crescita	2	bn:00034136n	bn:08840320n
+hashtag	argomento	3	bn:01354049n	bn:00022154n
+Orione	costellazione	4	bn:00045249n	bn:00022046n
+Nietzsche	Chelsea	0	bn:00036537n	bn:02451834n
+rispetto reciproco	competizione	0	None	bn:00021339n
+ramo	braccio	1	bn:00051218n	bn:00005702n
+vittima	telefono	0	bn:00016592n	bn:00062020n
+deviazione standard	accumulazione	0	bn:00073919n	bn:00000772n
+valanga	neve	3	bn:00007428n	bn:00072455n
+insegnante	studente	3	bn:00046958n	bn:00029806n
+bestiame	yogurt	1	bn:00033678n	bn:00081929n
+sessismo	discriminazione di genere	4	bn:00070792n	bn:00070792n
+Polo Sud	danza	0	bn:00072988n	bn:00025142n
+pubblico ministero	avvocato	3	bn:00064806n	bn:00007051n
+racchetta	palla	2	bn:00065848n	bn:00008120n
+mutuo	debito	3	bn:00025638n	bn:00125141n
+prospettiva	distanza	2	bn:00051351n	bn:00027747n
+Federer	Dylan	3	bn:15468810n	bn:00351933n
+avvocato	galleria	0	bn:17772860n	bn:00005940n
+aspettativa di vita	misura statistica	1	None	bn:03147780n
+membrana cellulare	provirus	1	bn:00017036n	bn:00064920n
+Unione Europea	Mosca	1	bn:00021127n	bn:00015634n
+mondo	Asia	1	bn:00029424n	bn:00006329n
+Paint	Photoshop	2	bn:15180584n	bn:01834403n
+senato	costituzione	2	bn:00070458n	bn:00022052n
+prezzemolo	muffin	1	bn:00060755n	bn:00037608n
+mente	cervello	4	bn:00012681n	bn:00012681n
+Mercedes	Opel	3	bn:01103847n	bn:21706116n
+martello	dente	0	bn:00042730n	bn:00077593n
+Rinascimento	Rinascimento	4	bn:00067098n	bn:00067098n
+gonna	orologio	1	bn:00072004n	bn:00081700n
+opera	cinema	3	bn:00059107n	bn:00019129n
+insegnante	istruttore	4	bn:00046958n	bn:00046958n
+Sole	cavo	0	bn:00073964n	bn:00068266n
