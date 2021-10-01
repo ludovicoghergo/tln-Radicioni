@@ -1,5 +1,5 @@
 antropologia	archeologia	3	bn:00004584n	bn:00005391n
-Dell	Dingle	1	bn:00190000n	bn:01439086n
+Dell	Dingle	3	bn:00190000n	bn:01439086n
 succo	cucchiaio	1	bn:00048532n	bn:00073547n
 Pfizer	medicinale	3	bn:03463336n	bn:00054128n
 camion	pacco	1	bn:00015022n	bn:16912174n
