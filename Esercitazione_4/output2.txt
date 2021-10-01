@@ -1,0 +1,50 @@
+antropologia	archeologia	0.7843782224853615
+Dell	Dingle	0.5443691626054936
+succo	cucchiaio	0.693366575868437
+Pfizer	medicinale	0.8844328643917672
+camion	pacco	0.4729178652475014
+recettore	molecola proteica	0.7806545970137876
+Google Drive	driver	0.7601092508555678
+miliardario	senzatetto	0.3015625382702531
+episodio	capitolo	1.0000000000000002
+infinito	zero	0.9692476697884509
+servo	schiavo	0.9999999999999996
+suffisso	affisso	0.9730640954098917
+riscaldamento globale	calore	0.6709633848309753
+ormone della crescita	somatotropina	0.999999999999999
+cielo	sogno	0.6987743286884381
+prezzo di offerta	Londra	0.37159969290004163
+fertilizzante	crescita	0.4925449718377061
+hashtag	argomento	0.4877352520186618
+Orione	costellazione	0.9604566853326504
+Nietzsche	Chelsea	0.45295726548164983
+rispetto reciproco	competizione	0
+ramo	braccio	0.7600114115650425
+vittima	telefono	0.5055400451689991
+deviazione standard	accumulazione	0.38923207323470366
+valanga	neve	0.8678647977609028
+insegnante	studente	0.9125226203644995
+bestiame	yogurt	0.5894919745253553
+sessismo	discriminazione di genere	1.0000000000000007
+Polo Sud	danza	0.43809424360299354
+pubblico ministero	avvocato	0.8670419016481556
+racchetta	palla	0.7923016530957188
+mutuo	debito	0.9048017153816452
+prospettiva	distanza	0.790041063344442
+Federer	Dylan	0.6715244025837841
+avvocato	galleria	0.43850570515014325
+aspettativa di vita	misura statistica	0.5012038357033546
+membrana cellulare	provirus	0.7537227293049514
+Unione Europea	Mosca	0.5463901759273477
+mondo	Asia	0.6629075158915035
+Paint	Photoshop	0.8527318122476878
+senato	costituzione	0.7633641637523584
+prezzemolo	muffin	0.7887842981283499
+mente	cervello	1.0000000000000007
+Mercedes	Opel	0.8381923090208195
+martello	dente	0.815873014309837
+Rinascimento	Rinascimento	1.0000000000000007
+gonna	orologio	0.49369063574937266
+opera	cinema	0.7897682963025783
+insegnante	istruttore	0.9999999999999994
+Sole	cavo	0.7686571824652723

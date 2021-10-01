@@ -1,0 +1,50 @@
+antropologia	archeologia	bn:00004584n	bn:00005391n	antropologia	archeologia
+Dell	Dingle	bn:14739384n	bn:02452439n	Dell	Dingle_(Irlanda),Dingle
+succo	cucchiaio	bn:00048532n	bn:00075828n	sugo,Succo_di_frutta,succo,succo_di_frutta	cucchiaiata,cucchiaio
+Pfizer	medicinale	bn:03463336n	bn:00061887n	Pfizer	None
+camion	pacco	bn:00015022n	bn:00060118n	autocarro,truck,camion	bustina,cartina,pacchetto,pacco
+recettore	molecola proteica	bn:14945754n	bn:00064856n	recettore_(biochimica),recettore	None
+Google Drive	driver	bn:02697062n	bn:00026721n	Google_Drive	driver,device_driver,driver_del_dispositivo
+miliardario	senzatetto	bn:00010443n	bn:00044537n	Miliardario,miliardario	Senzatetto,Persona_senza_casa,senzatetto
+episodio	capitolo	bn:00031225n	bn:00017730n	episodio	cap.,capitolo,capo
+infinito	zero	bn:00046667n	bn:00897134n	infinito,infinito_(modo),presente_infinito,infinitivo	zero
+servo	schiavo	bn:00072080n	bn:00072080n	schiavo,servo	schiavo,servo
+suffisso	affisso	bn:00030757n	bn:00001777n	suffisso,postfisso	affisso
+riscaldamento globale	calore	bn:00040681n	bn:03234191n	riscaldamento_globale,riscaldamento_globale_dell'atmosfera,riscaldamento_planetario	energia_termica,calore
+ormone della crescita	somatotropina	bn:00041984n	bn:00041984n	Somatotropina,somatotropina,ormone_della_crescita,ormone_della_crescita_umana	Somatotropina,somatotropina,ormone_della_crescita,ormone_della_crescita_umana
+cielo	sogno	bn:00029734n	bn:03677299n	eden,Eden,paradiso	Sogno_(personaggio),Sogno
+prezzo di offerta	Londra	bn:00010264n	bn:00013179n	cambio_denaro,corso_del_denaro,corso_denaro,Denaro,offerta,offerta_di_vendita	Londra
+fertilizzante	crescita	bn:00034136n	bn:00026697n	composto_azotato,concime,fertilizzante,fertilizzante_azotato,fertilizzante_chimico	crescita,embriogenesi,evoluzione,ontogenesi,sviluppo
+hashtag	argomento	bn:01354049n	bn:00074900n	hashtag	argomento,materia,oggetto,soggetto,tasto,tema,tematica,argomento_principale
+Orione	costellazione	bn:00045249n	bn:00022046n	Orione,Orione_(costellazione),Orion	costellazione
+Nietzsche	Chelsea	bn:00036537n	bn:03405986n	Friedrich_Nietzsche	Chelsea_(gruppo_musicale_britannico),Chelsea
+rispetto reciproco	competizione	None	None	None	None
+ramo	braccio	bn:00066120n	bn:00005702n	None	arto_superiore,braccio,arto_superiore_libero
+vittima	telefono	bn:00029149n	bn:00062021n	vittima	fonema,fono,suono
+deviazione standard	accumulazione	bn:00073919n	bn:00751221n	Scarto_quadratico_medio,deviazione_standard,scarto_quadratico_medio,scarto_tipo	Accumulazione
+valanga	neve	bn:00007428n	bn:00072455n	lavina,valanga,slavina	neve,nevicata,caduta_di_neve
+insegnante	studente	bn:00046958n	bn:00029806n	docente,insegnante,istruttore,maestra,maestro	allievo,alunno,studente,scolaro,allieva,studentessa
+bestiame	yogurt	bn:00033678n	bn:00081929n	bestiame,Bestiame,animale_di_fattoria,armento	iogurt,jogurt,yoghurt,yogurt
+sessismo	discriminazione di genere	bn:00070792n	bn:00070792n	sessismo	sessismo
+Polo Sud	danza	bn:00004479n	bn:01126934n	Antartide,Polo_Sud,Antartico	None
+pubblico ministero	avvocato	bn:00064806n	bn:01485021n	accusatore,pm,Pubblico_Ministero,pubblico_ministero,procuratore,procuratore_della_repubblica	None
+racchetta	palla	bn:00065848n	bn:00658097n	racchetta	Palla_eh!
+mutuo	debito	bn:00051693n	bn:00025638n	prestito,prestito_(finanza)	chiodo,debito,prestito,debiti
+prospettiva	distanza	bn:00051351n	bn:00027749n	Prospettiva,prospettiva	distanza,distanza_(matematica),lunghezza
+Federer	Dylan	bn:15468810n	bn:00351933n	Federer	Dylan
+avvocato	galleria	bn:16318971n	bn:00005373n	Personaggi_secondari_de_I_Simpson	arcata,galleria,porticato,portico,sottoportico
+aspettativa di vita	misura statistica	bn:01120526n	bn:03147780n	speranza_di_vita	None
+membrana cellulare	provirus	bn:00017036n	bn:00064920n	parete_cellulare,membrana_cellulare,citomembrana,membrana_plasmatica,plasmalemma	Provirus
+Unione Europea	Mosca	bn:00021127n	bn:00015634n	CEE,Comunità_economica_europea,Unione_europea,Unione_Europea	Mosca,Mosca_(Russia),Moscova
+mondo	Asia	bn:00045153n	bn:03667810n	collettivita'_umana,genere_umano,gente,mondo,razza_umana,società,terra,umanità,uomo	Asia_(Oceanina),Asia
+Paint	Photoshop	bn:15180584n	bn:01834403n	Paint	Adobe_Photoshop
+senato	costituzione	bn:03335417n	bn:00022052n	Camera_alta,camera_alta,Senato	costituzione,statuto,Legge_organica,legge_organica
+prezzemolo	muffin	bn:00060755n	bn:00037608n	petrosello,prezzemolo,Petroselinum_crispum	muffin
+mente	cervello	bn:00012681n	bn:00012681n	cervello,mente,pensiero,psiche,psicologia,testa,Nous,Psiche,Intelletto_cosmico,testare	cervello,mente,pensiero,psiche,psicologia,testa,Nous,Psiche,Intelletto_cosmico,testare
+Mercedes	Opel	bn:01103847n	bn:00059061n	Mercedes	Wilhelm_von_Opel
+martello	dente	bn:00042731n	bn:00077593n	martello	dente,dente_umano,denti
+Rinascimento	Rinascimento	bn:00044080n	bn:00044080n	Alto_Rinascimento	Alto_Rinascimento
+gonna	orologio	bn:00072004n	bn:00081700n	gonna,gonnella,sottana	orologio_da_polso,orologio
+opera	cinema	bn:00059109n	bn:00019129n	Teatro_d'opera,teatro_d'opera,opera,teatro_dell'opera	cine,cinema,cinematografo,schermo,Cinema_(luogo),sala_cinematografica
+insegnante	istruttore	bn:00046958n	bn:00046958n	docente,insegnante,istruttore,maestra,maestro	docente,insegnante,istruttore,maestra,maestro
+Sole	cavo	bn:16676695n	bn:01583344n	Sole	Cavo_(gruppo_musicale),Cavo
