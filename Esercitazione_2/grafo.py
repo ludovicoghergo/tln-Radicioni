@@ -10,7 +10,7 @@ def traverse_loop(graph, start):
         actual = toDo.pop()
         if not actual in done:
             len = actual.shortest_path_distance(start)
-            if not len > 1:
+            if isinstance(len, int) and not len > 1:
                 for child in actual.hyponyms():
                     graph.add_edge(actual.name(), child.name())
                     toDo.add(child)
@@ -39,6 +39,7 @@ def best_sense(word, ctx, graph):
     denominatore = 0
     for s in wn.synsets(word):
         score = get_score(s, ctx, graph)
+        print(str(s.name()) + " score= "+ str(score))
         denominatore+=score
         scores.append([s, score])
     best_sense=0

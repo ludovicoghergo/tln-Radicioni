@@ -71,14 +71,17 @@ for i in range(4):
         synsets = synsets + wn.synsets(fe)
     for lu in local.lexUnit:
         synsets = synsets + wn.synsets(lu)
-    synsets = set(synsets)
+    ctx = get_context(f[i][0])
+    for term in ctx:
+        synsets= synsets + wn.synsets(term)
+    synsets = set(synsets).difference("None")
     my_graph = grafo.wn_graph(synsets)
     #grafo.graph_draw(my_graph)
     #short_path_list = nx.shortest_simple_paths(my_graph,'part.n.02','object.n.01')
     #short_path_list = list(short_path_list)
-    ctx = get_context(f[i][0])
+
     # chiamare best sense per ogni fe e lexical unit
-    print(grafo.best_sense("corridor",ctx,my_graph))
+    print(grafo.best_sense("door",ctx,my_graph))
     print("fatto")
 
 
