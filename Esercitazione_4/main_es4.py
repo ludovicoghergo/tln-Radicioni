@@ -31,7 +31,7 @@ def calc_max(w1,w2):
                         val_max = temp
     return val_max,max_elem1,max_elem2
 
-nasari_file = open('utils/mini_NASARI.tsv', 'r')
+nasari_file = open('utils/mini_NASARI.tsv', 'r', encoding="utf8")
 gold_file = open('annotation.txt', 'r')
 gold_file2 = open('annotation2.txt', 'r')
 trans_file = open('utils/SemEval17_IT_senses2synsets.txt', 'r')

@@ -64,18 +64,21 @@ for i in range(4):
     local = fn.frame(f[i][0])
     word2 = []
     synsets = []
-    word1 = re.sub(r"[^a-zA-Z0-9 ]", "",f[i][1]).split()
+    word1 = re.sub(r"[^a-zA-Z0-9 ]", "",f[i][1].replace("_"," ")).split()
     for wd in word1:
         synsets = synsets + wn.synsets(wd)
     for fe in local.FE:
         synsets = synsets + wn.synsets(fe)
+    for lu in local.lexUnit:
+        synsets = synsets + wn.synsets(lu)
     synsets = set(synsets)
     my_graph = grafo.wn_graph(synsets)
     #grafo.graph_draw(my_graph)
     #short_path_list = nx.shortest_simple_paths(my_graph,'part.n.02','object.n.01')
     #short_path_list = list(short_path_list)
     ctx = get_context(f[i][0])
-    grafo.get_score("Creator","creator.n.02",ctx,my_graph)
+    # chiamare best sense per ogni fe e lexical unit
+    print(grafo.best_sense("corridor",ctx,my_graph))
     print("fatto")
 
 
