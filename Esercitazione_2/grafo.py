@@ -46,6 +46,7 @@ def wn_graph(starts):
     G.depth = {}
     print("inizio creazione grafo")
     for el in starts:
+        G.add_node(el.name())
         traverse_loop(G, el)
     print("grafo creato")
 
@@ -58,22 +59,28 @@ def wn_graph(starts):
 def best_sense(word, ctx, graph):
     scores = []
     denominatore = 0
-    for s in wn.synsets(word):
-        #start_time = time.time()
-        score = get_score(s, ctx, graph)
-        print(str(s.name()) + " score= "+ str(score))
-        denominatore+=score
-        scores.append([s, score])
-        #print("--- %s seconds ---" % (time.time() - start_time))
+    for w in word.replace("_"," ").split():
+        for s in wn.synsets(w):
+            #start_time = time.time()
+            score = get_score(s, ctx, graph)
+            #print(str(s.name()) + " score= "+ str(score))
+            denominatore+=score
+            scores.append([s, score])
+            #print("--- %s seconds ---" % (time.time() - start_time))
     best_sense=0
     best_prob=0
     i=0
+    if(denominatore == 0):
+        print("Zero")
     for i in range(0, len(scores)):
-        prob = scores[i][1] / denominatore
-        if prob>best_prob:
+        prob = scores[i][1] / denominatore if denominatore != 0 else 0
+        if prob>=best_prob:
             best_prob=prob
             best_sense=i
-    return scores[best_sense][0]
+    if(not scores):
+        print("None")
+    ris = scores[best_sense][0] if scores else None
+    return ris
 
 def get_score(poss_sense,ctx,graph):
     sum = 0

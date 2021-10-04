@@ -9,12 +9,12 @@ import re
 from nltk.corpus.reader.wordnet import Synset
 
 # FRAME GHERGO
-f = [[1582,"Proper_reference"],[2191,"Turning_out"],[1670,"Posing_as"],[15,"Separating"],[2320,"Cause_bodily_experience"]]
+#f = [[1582,"Proper_reference"],[2191,"Turning_out"],[1670,"Posing_as"],[15,"Separating"],[2320,"Cause_bodily_experience"]]
 # FRAME ZITO
-#f = [[1025,"Connecting_architecture"],[2006,"Hunting"],[2612,"Circumscribed_existence"],[251,"Entity"],[62,"Placing"]]
+f = [[1025,"Connecting_architecture"],[2006,"Hunting"],[2612,"Circumscribed_existence"],[251,"Entity"],[62,"Placing"]]
 
-#file1 = open('annotation.txt', 'r')
-file1 = open('annotation2.txt', 'r')
+file1 = open('annotation.txt', 'r')
+#file1 = open('annotation2.txt', 'r')
 Lines = file1.readlines()
 i=0
 title = 0
