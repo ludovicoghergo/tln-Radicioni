@@ -24,7 +24,7 @@ def get_context(word):
         no_words.append(line[:len(line)-1])
     no_words = set(no_words)
     context = context.difference(no_words)
-    return context
+    return context, no_words
 
 
 ### prova
@@ -100,11 +100,12 @@ for i in range(4):
         synsets = synsets + wn.synsets(fe)
     for lu in local.lexUnit:
         synsets = synsets + wn.synsets(lu)
-    ctx = get_context(f[i][0])
+    ctx, stop_W = get_context(f[i][0])
     for term in ctx:
         synsets= synsets + wn.synsets(term)
-    synsets = set(synsets).difference("None")
+    synsets = set(synsets).difference("None").difference(stop_W)
     my_graph = grafo.wn_graph(synsets)
+    ctx = synsets
     #grafo.graph_draw(my_graph)
     #short_path_list = nx.shortest_simple_paths(my_graph,'part.n.02','object.n.01')
     #short_path_list = list(short_path_list)
