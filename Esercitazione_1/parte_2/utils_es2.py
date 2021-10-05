@@ -1,11 +1,10 @@
 from nltk.corpus import wordnet as wn
 ##stop words
-file3 = open('stop_words_FULL.txt', 'r')
+file3 = open('data/stop_words_FULL.txt', 'r')
 Lines3 = file3.readlines()
 no_words = []
 for line in Lines3:
     no_words.append(line[:len(line)-1])
-print("Reading stop words...")
 no_words = set(no_words)
 ## stop words
 

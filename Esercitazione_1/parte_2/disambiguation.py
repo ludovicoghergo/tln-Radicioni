@@ -1,10 +1,6 @@
-import nltk
 from nltk.corpus import wordnet as wn
 import utils_es2 as ut2
-import numpy
 import re
-
-
 
 def lesk(word,sentence):
     if wn.synsets(word):

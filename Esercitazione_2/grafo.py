@@ -11,7 +11,7 @@ def traverse_loop(graph, start):
         actual = toDo.pop()
         if not actual in done:
             len = actual.shortest_path_distance(start)
-            if isinstance(len, int) and not len > 1:
+            if isinstance(len, int) and not len > 2:
                 for child in actual.hyponyms():
                     graph.add_edge(actual.name(), child.name())
                     toDo.add(child)
@@ -27,10 +27,8 @@ def wn_graph(starts):
     G.depth = {}
     print("inizio creazione grafo")
     for el in starts:
-        G.add_node(el.name())
         traverse_loop(G, el)
     print("grafo creato")
-
     return G
 
 #def graph_draw(graph):
@@ -43,20 +41,17 @@ def best_sense(word, ctx, graph):
     #for w in word.replace("_"," ").split():
     for s in wn.synsets(word):
         score = get_score(s, ctx, graph)
+        print(s.name()+" = "+str(score))
         denominatore+=score
         scores.append([s, score])
     best_sense=0
     best_prob=0
     i=0
-    if(denominatore == 0):
-        print("Zero")
     for i in range(0, len(scores)):
         prob = scores[i][1] / denominatore if denominatore != 0 else 0
         if prob>=best_prob:
             best_prob=prob
             best_sense=i
-    if(not scores):
-        print("None")
     ris = scores[best_sense][0] if scores else None
     return ris
 

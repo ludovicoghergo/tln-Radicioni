@@ -1,4 +1,3 @@
-import nltk
 from nltk.corpus import semcor
 import disambiguation as dis
 from nltk.corpus.reader.wordnet import Lemma
@@ -28,10 +27,11 @@ def calc_lesk():
                 ris = ris + 1 if test_data[i][1] == sol else ris
             test_data[i].append(sol)
         i = i + 1
+    print(ris/50)
     return ris / 50
 
 sum = 0
 n_try = 10
 for k in range(n_try):
     sum = sum + calc_lesk()
-print(sum/n_try)
+print("tot = "+ str(sum/n_try))

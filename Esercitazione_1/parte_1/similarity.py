@@ -1,4 +1,3 @@
-import nltk
 from nltk.corpus import wordnet as wn
 import utils_es1 as ut
 import numpy
@@ -52,6 +51,5 @@ def lc_word (w1, w2):
 def lc_sense (ss1, ss2):
     if (ut.short_path_dist(ss1,ss2) != None):
         lc = float(-(numpy.log((ut.short_path_dist(ss1,ss2)+1)/(2*16+1))))
-        #print(str(lc) + " - " + str(ss1.lch_similarity(ss2)))
         return lc
     return 0.0

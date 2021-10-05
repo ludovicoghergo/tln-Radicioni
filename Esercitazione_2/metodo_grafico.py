@@ -1,12 +1,7 @@
-
-import nltk
 from nltk.corpus import framenet as fn
 from nltk.corpus import wordnet as wn
 import re
 import grafo
-import networkx as nx
-
-
 
 def get_context(word):
     word2 = []
@@ -59,8 +54,6 @@ print("ciao")
 f = [[1025,"Connecting_architecture"],[2006,"Hunting"],[2612,"Circumscribed_existence"],[251,"Entity"]]
 
 
-
-
 file1 = open('annotation.txt', 'r')
 Lines = file1.readlines()
 i=0
@@ -103,7 +96,7 @@ for i in range(4):
     ctx, stop_W = get_context(f[i][0])
     for term in ctx:
         synsets= synsets + wn.synsets(term)
-    synsets = set(synsets).difference("None").difference(stop_W)
+    synsets = set(synsets).difference("None")
     my_graph = grafo.wn_graph(synsets)
     ctx = synsets
     #grafo.graph_draw(my_graph)
