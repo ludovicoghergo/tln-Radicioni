@@ -13,7 +13,7 @@ def get_context(word):
         val = local.FE[elem]
         word2 = word2 + (re.sub(r"[^a-zA-Z0-9 ]", "", val.definition).lower().split())
     context = set(word1 + word2)
-    file1 = open('stop_words_FULL.txt', 'r')
+    file1 = open('data/stop_words_FULL.txt', 'r')
     Lines = file1.readlines()
     for line in Lines:
         no_words.append(line[:len(line)-1])
@@ -46,12 +46,12 @@ for line in LinesGold:
     else:
         i=i+1
         title=0
-print("ciao")
+#print("ciao")
 
 # FRAME GHERGO
 #f = [[1582,"reference"],[2191,"turn_out"],[1670,"posing"],[15,"separating"],[2320,"experience"]]
 # FRAME ZITO
-f = [[1025,"Connecting_architecture"],[2006,"Hunting"],[2612,"Circumscribed_existence"],[251,"Entity"]]
+f = [[1025,"Connecting_architecture"],[2006,"Hunting"],[2612,"Circumscribed_existence"],[251,"Entity"],[62, "Placing"]]
 
 
 file1 = open('annotation.txt', 'r')
@@ -81,7 +81,7 @@ LU_sense = []
 tot_el = 0
 file = open("output.txt", "w")
 count = 0
-for i in range(4):
+for i in range(5):
     max_overlap = 0
     local = fn.frame(f[i][0])
     word2 = []
@@ -108,13 +108,13 @@ for i in range(4):
         out_sense = grafo.best_sense(elem[1],ctx,my_graph)
         count = count + 1 if out_sense is not None and out_sense == wn.synset(elem[3]) else count
 
-    # chiamare best sense per ogni fe e lexical unit
-    # for fe in local.FE:
-    #     file.write(fe+"\t"+str(grafo.best_sense(fe,ctx,my_graph))+"\n")
-    #
-    # for lu in local.lexUnit:
-    #     file.write(lu+"\t"+str(grafo.best_sense(lu[:len(lu)-2],ctx,my_graph))+"\n")
-    #
+    #chiamare best sense per ogni fe e lexical unit
+    for fe in local.FE:
+        file.write(fe+"\t"+str(grafo.best_sense(fe,ctx,my_graph))+"\n")
+
+    for lu in local.lexUnit:
+        file.write(lu+"\t"+str(grafo.best_sense(lu[:len(lu)-2],ctx,my_graph))+"\n")
+
     file.write("\n")
 
 file.close()

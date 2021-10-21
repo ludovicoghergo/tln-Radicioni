@@ -41,7 +41,7 @@ def best_sense(word, ctx, graph):
     #for w in word.replace("_"," ").split():
     for s in wn.synsets(word):
         score = get_score(s, ctx, graph)
-        print(s.name()+" = "+str(score))
+        #print(s.name()+" = "+str(score))
         denominatore+=score
         scores.append([s, score])
     best_sense=0

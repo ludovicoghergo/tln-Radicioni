@@ -117,7 +117,7 @@ for line in Lines3:
 no_words = set(no_words)
 dict_vet = {}
 # 1=title - 2=cue word
-metodo_riassunto = 1
+metodo_riassunto = 2
 
 for l in Lines2:
     elems = l.split(';')
